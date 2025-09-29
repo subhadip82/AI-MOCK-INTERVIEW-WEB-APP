@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useUser } from '@clerk/nextjs';
 import React, { useState } from 'react'
 import EmptyState from './EmptyState';
+import CreatinterviewDialog from '../_components/CreatinterviewDialog';
 
 
 
@@ -17,7 +18,7 @@ function Dashboard() {
     <h2 className='text-3xl font-bold'>Welcome, {user?.fullName}</h2>
     </div>
 
-    <Button size={'lg'}>+ Creat Interview </Button>
+    <CreatinterviewDialog />
     </div>
     {InterviewList.length==0&&
     <EmptyState/>}
