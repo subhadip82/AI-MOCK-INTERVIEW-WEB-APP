@@ -28,25 +28,25 @@ function CreatinterviewDialog() {
   }
 
   const onsubmit = async () => {
-    if (!file) {
-      alert("Please select a PDF file first.");
-      return;
-    }
-    setLoading(true);
-    const formData = new FormData();
-    formData.append('file', file);
-    try {
-      // Make sure this matches your API route folder name!
-      const res = await axios.post('/api/gentert-interview-qustion', formData);
-      console.log(res.data);
-      alert("PDF uploaded successfully!");
-    } catch (err) {
-      console.log(err);
-      alert("PDF upload failed!");
-    } finally {
-      setLoading(false);
-    }
+  if (!file) {
+    alert("Please select a PDF file first.");
+    return;
   }
+  setLoading(true);
+  const formData = new FormData();
+  formData.append('file', file);
+  try {
+    const res = await axios.post('/api/generate-interview-question', formData);
+    // Log only the interview questions
+    alert("PDF upload successful!");
+    console.log(res.data);
+  } catch (err) {
+    console.log(err);
+    alert("PDF upload failed!");
+  } finally {
+    setLoading(false);
+  }
+}
 
   return (
     <Dialog>
