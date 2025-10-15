@@ -13,7 +13,10 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
-import type * as Schema from "../Schema.js";
+import type * as functions_interview from "../functions/interview.js";
+import type * as interview from "../interview.js";
+import type * as reminders from "../reminders.js";
+import type * as subscription from "../subscription.js";
 import type * as user from "../user.js";
 
 /**
@@ -25,7 +28,10 @@ import type * as user from "../user.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
-  Schema: typeof Schema;
+  "functions/interview": typeof functions_interview;
+  interview: typeof interview;
+  reminders: typeof reminders;
+  subscription: typeof subscription;
   user: typeof user;
 }>;
 export declare const api: FilterApi<

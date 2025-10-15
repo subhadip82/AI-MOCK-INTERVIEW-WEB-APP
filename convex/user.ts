@@ -23,9 +23,10 @@ export const createUser = mutation({
       });
 
       return {
-        ...data,
-        id: result,
-      };
+  ...data,
+  _id: result, // ✅ Convex ID uses _id, not id
+};
+
     } else {
       return { message: "User already exists" };
     }

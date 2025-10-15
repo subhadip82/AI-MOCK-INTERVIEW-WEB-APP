@@ -3,6 +3,8 @@ import {Outfit } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ConvexClientProvider } from "./ConvexClientProvider";
+import { Toaster } from "sonner";
+import ClientAppDownloadPopup from "./_Components/ClientAppDownloadPopup";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,13 +18,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+      signInUrl="/sign-in"
+      signUpUrl="/sign-up"
+      afterSignInUrl="/dashboard"
+      afterSignUpUrl="/dashboard"
+    >
     <html lang="en">
       <body
         className={outfit.className}
+        suppressHydrationWarning={true}
       >
         <ConvexClientProvider>
           {children}
+          <Toaster />
+          <ClientAppDownloadPopup />
         </ConvexClientProvider>
       </body>
     </html>

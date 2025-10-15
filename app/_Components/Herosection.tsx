@@ -9,7 +9,7 @@ export function Herosection() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-violet-100 via-pink-50 to-white p-10">
       <div className="px-4 py-10 md:py-20 w-full max-w-4xl">
-        <h1 className="relative z-10 mx-auto text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
+        <h1 className="relative z-10 mx-auto text-center text-2xl font-bold text-slate-800 md:text-4xl lg:text-7xl dark:text-slate-200">
           {"Masterd your interview with AI-powered mock interviews"
             .split(" ")
             .map((word, index) => (
@@ -32,7 +32,7 @@ export function Herosection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.8 }}
-          className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
+          className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-medium text-slate-700 dark:text-slate-300"
         >
           With DIP AI, you can practice your interview skills anytime, anywhere.
         </motion.p>
@@ -43,9 +43,9 @@ export function Herosection() {
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
           <Link href="/dashboard">
-            {/* <Button size="lg" className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md">
+            <Button size="lg" className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md">
               Get Started
-            </Button> */}
+            </Button>
           </Link>
           <Link href="/sign-in">
             <Button className="bg-violet-500 hover:bg-violet-600 text-white px-6 py-2 rounded-lg shadow-md font-semibold text-lg">
@@ -57,7 +57,7 @@ export function Herosection() {
               Sign Up
             </Button>
           </Link>
-          <button className="w-60 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
+          <button className="w-60 transform rounded-lg border-2 border-slate-300 bg-white px-6 py-2 font-semibold text-slate-800 transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-50 hover:border-slate-400 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700">
             Contact Support
           </button>
         </motion.div>
